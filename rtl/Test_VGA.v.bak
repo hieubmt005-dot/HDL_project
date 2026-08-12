@@ -1,0 +1,36 @@
+module Test_VGA(
+    input CLOCK_50,          // Xung 50MHz từ DE2
+    input [0:0] KEY,         // Dùng KEY0 làm nút Reset
+    output VGA_HS, VGA_VS,   // Đồng bộ ngang/dọc
+    output [9:0] VGA_R, VGA_G, VGA_B, // Tín hiệu màu
+    output VGA_BLANK, VGA_SYNC // Các chân điều khiển DAC của DE2
+);
+
+    wire rst = ~KEY[0]; // Nhấn KEY0 = 0 -> rst = 1 (Tích cực mức cao)
+    wire clk_25M, clk_60Hz;
+    wire [9:0] w_x, w_y;
+    wire w_video_on;
+
+    // Khởi tạo các module đã viết
+    clk_divider clk_unit (
+        .clk_50M(CLOCK_50), .rst(rst),
+        .clk_25M(clk_25M), .clk_60Hz(clk_60Hz)
+    );
+
+    vga_sync vga_unit (
+        .clk_25M(clk_25M), .rst(rst),
+        .hsync(VGA_HS), .vsync(VGA_VS),
+        .pixel_x(w_x), .pixel_y(w_y),
+        .video_on(w_video_on)
+    );
+
+    // Cấu hình chuẩn cho IC giải mã màu (Video DAC) trên board DE2
+    assign VGA_SYNC = 1'b0;
+    assign VGA_BLANK = w_video_on; 
+
+    // Test hiển thị: Nếu video_on = 1, tô toàn màn hình màu Xanh Lá
+    assign VGA_R = 10'd0;
+    assign VGA_G = w_video_on ? 10'h3FF : 10'd0; // Bật max màu xanh lá (3FF là mức sáng cao nhất của 10 bit)
+    assign VGA_B = 10'd0;
+
+endmodule

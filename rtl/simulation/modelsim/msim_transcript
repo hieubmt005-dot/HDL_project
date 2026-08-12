@@ -1,0 +1,40 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do hdl_project_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+D:/TRAN\ QUANG\ NHAT/Documents/HDL/HDL_Project {D:/TRAN QUANG NHAT/Documents/HDL/HDL_Project/vga_sync.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module vga_sync
+# 
+# Top level modules:
+# 	vga_sync
+# 
+# vlog -vlog01compat -work work +incdir+D:/TRAN\ QUANG\ NHAT/Documents/HDL/HDL_Project {D:/TRAN QUANG NHAT/Documents/HDL/HDL_Project/tb_vga_sync.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module tb_vga_sync
+# 
+# Top level modules:
+# 	tb_vga_sync
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs="+acc"  tb_vga_sync
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps tb_vga_sync 
+# Loading work.tb_vga_sync
+# Loading work.vga_sync
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Break in Module tb_vga_sync at D:/TRAN QUANG NHAT/Documents/HDL/HDL_Project/tb_vga_sync.v line 43
+# Simulation Breakpoint: Break in Module tb_vga_sync at D:/TRAN QUANG NHAT/Documents/HDL/HDL_Project/tb_vga_sync.v line 43
+# MACRO ./hdl_project_run_msim_rtl_verilog.do PAUSED at line 17

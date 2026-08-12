@@ -1,0 +1,32 @@
+module clk_divider (
+    input clk_50M,        // Xung 50MHz từ board DE2
+    input rst,            // Nút reset
+    output reg clk_25M,   // Xung 25MHz cho VGA
+    output reg clk_60Hz   // Xung 60Hz cho Game Logic
+);
+
+    // 1. Tạo xung 25MHz bằng cách chia đôi 50MHz
+    always @(posedge clk_50M or posedge rst) begin
+        if (rst) 
+            clk_25M <= 0;
+        else 
+            clk_25M <= ~clk_25M;
+    end
+
+    // 2. Tạo xung 60Hz
+    // Công thức tính số đếm: (50,000,000 / 60 / 2) - 1 = 416,666
+    reg [19:0] counter_60Hz;
+    always @(posedge clk_50M or posedge rst) begin
+        if (rst) begin
+            counter_60Hz <= 0;
+            clk_60Hz <= 0;
+        end else begin
+            if (counter_60Hz == 20'd416666) begin
+                counter_60Hz <= 0;
+                clk_60Hz <= ~clk_60Hz; // Đảo trạng thái tạo xung
+            end else begin
+                counter_60Hz <= counter_60Hz + 1;
+            end
+        end
+    end
+endmodule

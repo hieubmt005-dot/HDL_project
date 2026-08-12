@@ -1,0 +1,702 @@
+$comment
+	File created using the following command:
+		vcd file hdl_project.msim.vcd -direction
+$end
+$date
+	Mon Mar 30 21:15:56 2026
+$end
+$version
+	ModelSim Version 10.1d
+$end
+$timescale
+	1ps
+$end
+$scope module clk_divider_vlg_vec_tst $end
+$var reg 1 ! clk_50M $end
+$var reg 1 " rst $end
+$var wire 1 # clk_25M $end
+$var wire 1 $ clk_60Hz $end
+$var wire 1 % sampler $end
+$scope module i1 $end
+$var wire 1 & gnd $end
+$var wire 1 ' vcc $end
+$var wire 1 ( unknown $end
+$var tri1 1 ) devclrn $end
+$var tri1 1 * devpor $end
+$var tri1 1 + devoe $end
+$var wire 1 , Add0~10_combout $end
+$var wire 1 - Add0~24_combout $end
+$var wire 1 . Add0~28_combout $end
+$var wire 1 / Add0~34_combout $end
+$var wire 1 0 Equal0~2_combout $end
+$var wire 1 1 clk_50M~combout $end
+$var wire 1 2 clk_50M~clkctrl_outclk $end
+$var wire 1 3 clk_25M~0_combout $end
+$var wire 1 4 rst~combout $end
+$var wire 1 5 rst~clkctrl_outclk $end
+$var wire 1 6 clk_25M~reg0_regout $end
+$var wire 1 7 Add0~0_combout $end
+$var wire 1 8 Add0~3 $end
+$var wire 1 9 Add0~4_combout $end
+$var wire 1 : Add0~5 $end
+$var wire 1 ; Add0~7 $end
+$var wire 1 < Add0~8_combout $end
+$var wire 1 = Add0~9 $end
+$var wire 1 > Add0~11 $end
+$var wire 1 ? Add0~12_combout $end
+$var wire 1 @ Add0~13 $end
+$var wire 1 A Add0~14_combout $end
+$var wire 1 B Add0~15 $end
+$var wire 1 C Add0~17 $end
+$var wire 1 D Add0~18_combout $end
+$var wire 1 E Add0~19 $end
+$var wire 1 F Add0~20_combout $end
+$var wire 1 G Add0~21 $end
+$var wire 1 H Add0~22_combout $end
+$var wire 1 I Add0~23 $end
+$var wire 1 J Add0~25 $end
+$var wire 1 K Add0~26_combout $end
+$var wire 1 L Add0~27 $end
+$var wire 1 M Add0~29 $end
+$var wire 1 N Add0~30_combout $end
+$var wire 1 O Add0~31 $end
+$var wire 1 P Add0~32_combout $end
+$var wire 1 Q Add0~33 $end
+$var wire 1 R Add0~35 $end
+$var wire 1 S Add0~36_combout $end
+$var wire 1 T Equal0~1_combout $end
+$var wire 1 U Equal0~4_combout $end
+$var wire 1 V Add0~16_combout $end
+$var wire 1 W Equal0~3_combout $end
+$var wire 1 X Equal0~5_combout $end
+$var wire 1 Y counter_60Hz~1_combout $end
+$var wire 1 Z Add0~1 $end
+$var wire 1 [ Add0~2_combout $end
+$var wire 1 \ counter_60Hz~0_combout $end
+$var wire 1 ] Add0~6_combout $end
+$var wire 1 ^ Equal0~0_combout $end
+$var wire 1 _ clk_60Hz~0_combout $end
+$var wire 1 ` clk_60Hz~reg0_regout $end
+$var wire 1 a counter_60Hz [19] $end
+$var wire 1 b counter_60Hz [18] $end
+$var wire 1 c counter_60Hz [17] $end
+$var wire 1 d counter_60Hz [16] $end
+$var wire 1 e counter_60Hz [15] $end
+$var wire 1 f counter_60Hz [14] $end
+$var wire 1 g counter_60Hz [13] $end
+$var wire 1 h counter_60Hz [12] $end
+$var wire 1 i counter_60Hz [11] $end
+$var wire 1 j counter_60Hz [10] $end
+$var wire 1 k counter_60Hz [9] $end
+$var wire 1 l counter_60Hz [8] $end
+$var wire 1 m counter_60Hz [7] $end
+$var wire 1 n counter_60Hz [6] $end
+$var wire 1 o counter_60Hz [5] $end
+$var wire 1 p counter_60Hz [4] $end
+$var wire 1 q counter_60Hz [3] $end
+$var wire 1 r counter_60Hz [2] $end
+$var wire 1 s counter_60Hz [1] $end
+$var wire 1 t counter_60Hz [0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+0"
+0#
+0$
+x%
+0&
+1'
+x(
+1)
+1*
+1+
+0,
+0-
+0.
+0/
+10
+01
+02
+13
+04
+05
+06
+07
+18
+09
+0:
+1;
+0<
+0=
+1>
+0?
+0@
+0A
+1B
+0C
+0D
+1E
+0F
+0G
+0H
+1I
+0J
+0K
+1L
+0M
+0N
+1O
+0P
+0Q
+1R
+0S
+0T
+1U
+0V
+1W
+0X
+0Y
+0Z
+0[
+0\
+0]
+0^
+0_
+0`
+zt
+0s
+0r
+0q
+0p
+0o
+0n
+0m
+0l
+0k
+0j
+0i
+0h
+0g
+0f
+0e
+0d
+0c
+0b
+0a
+$end
+#20000
+1!
+11
+12
+0%
+16
+1T
+17
+03
+1#
+1X
+1Y
+#40000
+0!
+01
+02
+1%
+#60000
+1!
+11
+12
+0%
+1s
+06
+0T
+13
+0#
+0X
+#80000
+0!
+01
+02
+1%
+#100000
+1!
+11
+12
+0%
+16
+1T
+1Z
+07
+03
+1#
+1X
+1[
+0Y
+1\
+#120000
+0!
+01
+02
+1%
+#140000
+1!
+11
+12
+0%
+1r
+0s
+06
+1^
+08
+0[
+0Z
+0T
+13
+0#
+1_
+0\
+19
+18
+1[
+0X
+09
+1\
+0_
+#160000
+0!
+01
+02
+1%
+#180000
+1!
+11
+12
+0%
+16
+1T
+17
+03
+1#
+1X
+1Y
+1_
+0\
+0Y
+#200000
+0!
+01
+02
+1%
+#220000
+1!
+11
+12
+0%
+1`
+0r
+06
+0_
+0^
+0[
+0T
+07
+13
+1$
+0#
+1_
+0X
+#240000
+0!
+01
+02
+1%
+#260000
+1!
+11
+12
+0%
+16
+1T
+17
+03
+1#
+1X
+1Y
+#280000
+0!
+01
+02
+1%
+#300000
+1!
+11
+12
+0%
+1s
+06
+0T
+13
+0#
+0X
+#320000
+0!
+01
+02
+1%
+#340000
+1!
+11
+12
+0%
+16
+1T
+1Z
+07
+03
+1#
+1X
+1[
+0Y
+1\
+#360000
+0!
+01
+02
+1%
+#380000
+1!
+11
+12
+0%
+1r
+0s
+06
+1^
+08
+0[
+0Z
+0T
+13
+0#
+0_
+0\
+19
+18
+1[
+0X
+09
+1\
+1_
+#400000
+0!
+01
+02
+1%
+#420000
+1!
+11
+12
+0%
+16
+1T
+17
+03
+1#
+1X
+1Y
+0_
+0\
+0Y
+#440000
+0!
+01
+02
+1%
+#460000
+1!
+11
+12
+0%
+0`
+0r
+06
+1_
+0^
+0[
+0T
+07
+13
+0$
+0#
+0_
+0X
+#480000
+0!
+01
+02
+1%
+#500000
+1!
+11
+12
+0%
+16
+1T
+17
+03
+1#
+1X
+1Y
+#520000
+0!
+01
+02
+1%
+#540000
+1!
+11
+12
+0%
+1s
+06
+0T
+13
+0#
+0X
+#560000
+0!
+01
+02
+1%
+#580000
+1!
+11
+12
+0%
+16
+1T
+1Z
+07
+03
+1#
+1X
+1[
+0Y
+1\
+#600000
+0!
+01
+02
+1%
+#620000
+1!
+11
+12
+0%
+1r
+0s
+06
+1^
+08
+0[
+0Z
+0T
+13
+0#
+1_
+0\
+19
+18
+1[
+0X
+09
+1\
+0_
+#640000
+0!
+01
+02
+1%
+#660000
+1!
+11
+12
+0%
+16
+1T
+17
+03
+1#
+1X
+1Y
+1_
+0\
+0Y
+#680000
+0!
+01
+02
+1%
+#700000
+1!
+11
+12
+0%
+1`
+0r
+06
+0_
+0^
+0[
+0T
+07
+13
+1$
+0#
+1_
+0X
+#720000
+0!
+01
+02
+1%
+#740000
+1!
+11
+12
+0%
+16
+1T
+17
+03
+1#
+1X
+1Y
+#760000
+0!
+01
+02
+1%
+#780000
+1!
+11
+12
+0%
+1s
+06
+0T
+13
+0#
+0X
+#800000
+0!
+01
+02
+1%
+#820000
+1!
+11
+12
+0%
+16
+1T
+1Z
+07
+03
+1#
+1X
+1[
+0Y
+1\
+#840000
+0!
+01
+02
+1%
+#860000
+1!
+11
+12
+0%
+1r
+0s
+06
+1^
+08
+0[
+0Z
+0T
+13
+0#
+0_
+0\
+19
+18
+1[
+0X
+09
+1\
+1_
+#880000
+0!
+01
+02
+1%
+#900000
+1!
+11
+12
+0%
+16
+1T
+17
+03
+1#
+1X
+1Y
+0_
+0\
+0Y
+#920000
+0!
+01
+02
+1%
+#940000
+1!
+11
+12
+0%
+0`
+0r
+06
+1_
+0^
+0[
+0T
+07
+13
+0$
+0#
+0_
+0X
+#960000
+0!
+01
+02
+1%
+#980000
+1!
+11
+12
+0%
+16
+1T
+17
+03
+1#
+1X
+1Y
+#1000000

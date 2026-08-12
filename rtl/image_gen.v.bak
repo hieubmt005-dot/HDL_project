@@ -1,0 +1,56 @@
+module image_gen(
+    input [9:0] pixel_x, pixel_y,
+    input video_on,
+    input [9:0] ball_x, ball_y,
+    input [9:0] paddle_x,
+    input [31:0] bricks,
+    output reg [9:0] vga_r, vga_g, vga_b
+);
+
+    // Kích thước copy y hệt bên game_logic
+    localparam PADDLE_W = 80, PADDLE_H = 10, PADDLE_Y = 440;
+    localparam BALL_SIZE = 8;
+    localparam BRICK_W = 64, BRICK_H = 16;
+    localparam BRICK_START_X = 64, BRICK_START_Y = 64;
+
+    wire is_paddle, is_ball, is_brick;
+    wire [4:0] current_col;
+    wire [4:0] current_row;
+    wire [4:0] brick_index;
+
+    // Kẻ khung (Bounding box) cho thanh chèo
+    assign is_paddle = (pixel_x >= paddle_x) && (pixel_x < paddle_x + PADDLE_W) &&
+                       (pixel_y >= PADDLE_Y) && (pixel_y < PADDLE_Y + PADDLE_H);
+
+    // Kẻ khung cho bóng (vẽ hình vuông cho đơn giản, mạch dễ tổng hợp hơn hình tròn)
+    assign is_ball = (pixel_x >= ball_x) && (pixel_x < ball_x + BALL_SIZE) &&
+                     (pixel_y >= ball_y) && (pixel_y < ball_y + BALL_SIZE);
+
+    // Kiểm tra pixel hiện tại có thuộc viên gạch nào còn sống không
+    assign current_col = (pixel_x - BRICK_START_X) >> 6;
+    assign current_row = (pixel_y - BRICK_START_Y) >> 4;
+    assign brick_index = (current_row << 3) + current_col;
+    
+    assign is_brick = (pixel_x >= BRICK_START_X) && (pixel_x < BRICK_START_X + 8 * BRICK_W) &&
+                      (pixel_y >= BRICK_START_Y) && (pixel_y < BRICK_START_Y + 4 * BRICK_H) &&
+                      (bricks[brick_index] == 1'b1); // Gạch ở vị trí này phải còn bit 1
+
+    // QUYẾT ĐỊNH XUẤT MÀU (Mạch Multiplexer)
+    always @(*) begin
+        if (~video_on) begin
+            {vga_r, vga_g, vga_b} = 30'h0; // Ngoài màn hình -> Đen
+        end else if (is_ball) begin
+            {vga_r, vga_g, vga_b} = {10'h3FF, 10'd0, 10'd0}; // Bóng màu Đỏ
+        end else if (is_paddle) begin
+            {vga_r, vga_g, vga_b} = {10'd0, 10'h3FF, 10'h3FF}; // Thanh chèo màu Xanh Lơ
+        end else if (is_brick) begin
+            // Tô màu gạch theo hàng cho đẹp mắt
+            if (current_row == 0)      {vga_r, vga_g, vga_b} = {10'h3FF, 10'h3FF, 10'd0}; // Hàng 0: Vàng
+            else if (current_row == 1) {vga_r, vga_g, vga_b} = {10'd0, 10'h3FF, 10'd0};   // Hàng 1: Xanh lá
+            else if (current_row == 2) {vga_r, vga_g, vga_b} = {10'h3FF, 10'd0, 10'h3FF}; // Hàng 2: Tím
+            else                       {vga_r, vga_g, vga_b} = {10'd0, 10'd0, 10'h3FF};   // Hàng 3: Xanh dương
+        end else begin
+            {vga_r, vga_g, vga_b} = 30'h0; // Màu nền Đen
+        end
+    end
+endmodule

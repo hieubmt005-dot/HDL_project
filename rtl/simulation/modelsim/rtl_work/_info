@@ -1,0 +1,45 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\TRAN QUANG NHAT\Documents\HDL\HDL_Project\simulation\modelsim
+vtb_vga_sync
+!i10b 1
+!s100 DZFYz`4M88?j1=UMCl6M11
+IN?011^UMnCoj1C><9D=RA1
+VFnRZFYfE2O@j71e]I6^8^0
+Z1 dD:\TRAN QUANG NHAT\Documents\HDL\HDL_Project\simulation\modelsim
+w1774881104
+8D:/TRAN QUANG NHAT/Documents/HDL/HDL_Project/tb_vga_sync.v
+FD:/TRAN QUANG NHAT/Documents/HDL/HDL_Project/tb_vga_sync.v
+L0 3
+Z2 OV;L;10.1d;51
+r1
+!s85 0
+31
+!s108 1774881421.859000
+!s107 D:/TRAN QUANG NHAT/Documents/HDL/HDL_Project/tb_vga_sync.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/TRAN QUANG NHAT/Documents/HDL/HDL_Project|D:/TRAN QUANG NHAT/Documents/HDL/HDL_Project/tb_vga_sync.v|
+!s101 -O0
+Z3 o-vlog01compat -work work -O0
+Z4 !s92 -vlog01compat -work work {+incdir+D:/TRAN QUANG NHAT/Documents/HDL/HDL_Project} -O0
+vvga_sync
+Ikj@FXVY7Rbb0:PO<GHFSn2
+V3Z@Y993g2d1D:4?TSE4n62
+R1
+w1774880220
+8D:/TRAN QUANG NHAT/Documents/HDL/HDL_Project/vga_sync.v
+FD:/TRAN QUANG NHAT/Documents/HDL/HDL_Project/vga_sync.v
+L0 1
+R2
+r1
+31
+R3
+!i10b 1
+!s100 azX7n<A]P@b=B1=I0RcbD3
+!s85 0
+!s108 1774881421.817000
+!s107 D:/TRAN QUANG NHAT/Documents/HDL/HDL_Project/vga_sync.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/TRAN QUANG NHAT/Documents/HDL/HDL_Project|D:/TRAN QUANG NHAT/Documents/HDL/HDL_Project/vga_sync.v|
+!s101 -O0
+R4

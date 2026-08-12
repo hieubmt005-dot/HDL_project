@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="hdl_project">
+		<CBX_INST_ENTRY INSTANCE_NAME="|BrickSmash_DE2|lpm_divide:Div1" CBX_FILE_NAME="lpm_divide_fem.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|BrickSmash_DE2|lpm_divide:Mod0" CBX_FILE_NAME="lpm_divide_f6m.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|BrickSmash_DE2|game_logic:game_unit|lpm_add_sub:Add5" CBX_FILE_NAME="add_sub_3ri.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|BrickSmash_DE2|game_logic:game_unit|lpm_add_sub:Add7" CBX_FILE_NAME="add_sub_3ri.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|BrickSmash_DE2|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_cem.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|BrickSmash_DE2|lpm_divide:Div2" CBX_FILE_NAME="lpm_divide_pfm.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|BrickSmash_DE2|lpm_divide:Mod1" CBX_FILE_NAME="lpm_divide_f6m.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|BrickSmash_DE2|lpm_divide:Mod3" CBX_FILE_NAME="lpm_divide_f6m.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|BrickSmash_DE2|lpm_divide:Mod2" CBX_FILE_NAME="lpm_divide_f6m.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

@@ -1,0 +1,41 @@
+module BrickSmash_DE2(
+    input CLOCK_50,          
+    input [3:0] KEY,         // Dùng KEY[0] làm rst, KEY[1]/KEY[2] di chuyển
+    
+    output VGA_HS, VGA_VS,   
+    output [9:0] VGA_R, VGA_G, VGA_B, 
+    output VGA_BLANK, VGA_SYNC, VGA_CLK 
+);
+
+    wire rst = ~KEY[0]; 
+    wire clk_25M, clk_60Hz;
+    wire [9:0] w_pixel_x, w_pixel_y;
+    wire w_video_on;
+    
+    wire [9:0] w_ball_x, w_ball_y, w_paddle_x;
+    wire [31:0] w_bricks;
+
+    // 1. Module cấp xung
+    clk_divider clk_unit (.clk_50M(CLOCK_50), .rst(rst), .clk_25M(clk_25M), .clk_60Hz(clk_60Hz));
+
+    // 2. Module xuất tọa độ quét
+    vga_sync vga_unit (.clk_25M(clk_25M), .rst(rst), .hsync(VGA_HS), .vsync(VGA_VS),
+                       .pixel_x(w_pixel_x), .pixel_y(w_pixel_y), .video_on(w_video_on));
+
+    // 3. Bộ não Game
+    game_logic game_unit (.clk_60Hz(clk_60Hz), .rst(rst), 
+                          .btn_left(KEY[2]), .btn_right(KEY[1]), // Nhấn KEY2 qua trái, KEY1 qua phải
+                          .ball_x(w_ball_x), .ball_y(w_ball_y),
+                          .paddle_x(w_paddle_x), .bricks(w_bricks));
+
+    // 4. Module xuất đồ họa
+    image_gen draw_unit (.pixel_x(w_pixel_x), .pixel_y(w_pixel_y), .video_on(w_video_on),
+                         .ball_x(w_ball_x), .ball_y(w_ball_y), .paddle_x(w_paddle_x),
+                         .bricks(w_bricks), .vga_r(VGA_R), .vga_g(VGA_G), .vga_b(VGA_B));
+
+    // Cấu hình ngõ ra DE2
+    assign VGA_CLK = clk_25M;   
+    assign VGA_SYNC = 1'b0;     
+    assign VGA_BLANK = w_video_on; 
+
+endmodule
